@@ -1,5 +1,5 @@
-class Player {
-  constructor(){
+class Player{
+constructor(){
     this.index = null;
     this.distance = 0;
     this.name = null;
@@ -13,8 +13,8 @@ class Player {
     })
   }
 
-  getCars(){
-    database.ref('CarsAtEnd').on("value",(data)=>{
+  getRunners(){
+    database.ref('RunnersAtEnd').on("value",(data)=>{
       this.rank = data.val();
       });
   }
@@ -25,9 +25,9 @@ class Player {
     });
   }
 
-  static updateCarsAtEnd(rank){
+  static updateRunnersAtEnd(rank){
     database.ref('/').update({
-      CarsAtEnd:rank
+      RunnersAtEnd:rank
     });
   }
 
